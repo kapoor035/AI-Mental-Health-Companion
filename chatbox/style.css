@@ -1,0 +1,322 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d;
+    color: white;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    position: relative;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.sidebar li {
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar li:hover {
+    background-color: #333;
+}
+
+/* Sidebar Toggle Button */
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 230px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: left 0.3s ease-in-out;
+}
+
+.toggle-btn:hover {
+    background: #333;
+}
+
+/* Hide Sidebar */
+.sidebar.hidden {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Move Toggle Button When Sidebar is Hidden */
+.sidebar.hidden .toggle-btn {
+    left: 10px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+/* Chatbox */
+.chatbox {
+    flex: 1;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+}
+
+/* Messages */
+.message {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.ai {
+    background-color: #444;
+    color: white;
+    align-self: flex-start;
+}
+
+/* Input Area */
+.input-area {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background-color: #222;
+    border-radius: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* mode switch */
+/* Mode Toggle Button */
+.mode-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #222;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.mode-toggle:hover {
+    background: #444;
+}
+
+/* 🌟 Light Mode Styles - Improved */
+.light-mode {
+    background-color: #f7f7f7;  
+    color: #222;
+}
+
+/* Light Mode for Chatbox */
+.light-mode .chatbox {
+    background-color: #ffffff;
+    border: 1px solid #ddd; 
+}
+
+/* Light Mode for Sidebar */
+.light-mode .sidebar {
+    background-color: #e6e6e6;
+    color: #222;
+}
+
+/* Light Mode for Sidebar Menu Items */
+.light-mode .sidebar li {
+    color: #222;
+}
+
+.light-mode .sidebar li:hover {
+    background-color: #d0d0d0;
+}
+
+/* Light Mode for Input Field */
+.light-mode input {
+    background-color: #ffffff;
+    color: #222;
+    border: none; 
+    outline: none; 
+    box-shadow: none;
+}
+
+/* Also Remove Border When Typing (Focus) */
+.light-mode input:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Light Mode for Input Area */
+.light-mode .input-area {
+    border: none;
+    background-color: #f0f0f0;
+}
+
+/* Light Mode for Messages */
+.light-mode .message {
+    border-radius: 8px;
+}
+
+/* Light Mode User Messages */
+.light-mode .user {
+    background-color: #444;
+    color: white;
+}
+
+/* Light Mode AI Messages */
+.light-mode .ai {
+    background-color: #e0e0e5;
+    color: black;
+}
+
+/* Light Mode for Buttons - Changed to Light Black */
+.light-mode button {
+    background-color: #444;
+    color: white;
+    border: none;
+}
+
+.light-mode button:hover {
+    background-color: #333;
+}
+
+/* Light Mode for Mode Toggle Button - Fully Visible */
+.light-mode .mode-toggle {
+    background: #444 !important;
+    color: white !important;
+    border: 1px solid #999;
+}
+
+/* Light Mode for Mode Toggle Hover */
+.light-mode .mode-toggle:hover {
+    background: #333 !important;
+}
+
+/* Auth Buttons (Login & Signup) */
+.auth-buttons {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    padding: 8px 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Dark Mode Buttons */
+.auth-buttons .login-btn {
+    background: white;
+    color: black;
+}
+
+.auth-buttons .signup-btn {
+    background: white;
+    color: black;
+}
+
+/* Button Hover Effect */
+.auth-buttons button:hover {
+    background: #ddd;
+}
+
+/* Light Mode Buttons */
+.light-mode .auth-buttons .login-btn {
+    background: #282828;
+    color: white;
+}
+
+.light-mode .auth-buttons .signup-btn {
+    background: #282828;
+    color: white;
+}
+
+.light-mode .auth-buttons button:hover {
+    background: #333;
+}

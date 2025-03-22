@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Companion - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header>
+        <h1 class="site-title">Mental Health Companion</h1>
+        <button id="mode-toggle">🌙</button>
+    </header>
+
+    <!-- Sign-Up Container -->
+    <div class="container">
+        <div class="login-box">
+            <h2>Welcome!</h2>
+            <p>Let's get you started on your journey.</p>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Username" required>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePassword()">👁</span>
+                </div>
+                <div class="password-container">
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                    <span class="toggle-password" onclick="togglePassword()">👁</span>
+                </div>
+                <a href="#" class="signin-link">Sign Up</a>
+            </form>
+            <p class="social-text">or sign up with</p>
+            <div class="social-icons">
+                <button class="social-btn">f</button>
+                <button class="social-btn">G</button>
+            </div>
+            <p>Already have an account? <a href="../login-page/index.html">Sign in</a></p>
+        </div>
+    </div>
+</body>
+</html>
